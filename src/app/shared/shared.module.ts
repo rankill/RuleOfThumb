@@ -10,8 +10,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { VotesContainerComponent } from './components/votes/votes-container/votes-container.component';
 import { VotesItemComponent } from './components/votes/votes-item/votes-item.component';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
-import { ThumbsBarComponent } from './components/thumbs-bar/thumbs-bar.component';
-
+import { ThumbsBarComponent } from './components/thumbs/thumbs-bar/thumbs-bar.component';
+import { ThumbsActionComponent } from './components/thumbs/thumbs-action/thumbs-action.component';
 
 @NgModule({
   imports: [
@@ -32,7 +32,8 @@ import { ThumbsBarComponent } from './components/thumbs-bar/thumbs-bar.component
     VotesContainerComponent,
     VotesItemComponent,
     ComingSoonComponent,
-    ThumbsBarComponent
+    ThumbsBarComponent,
+    ThumbsActionComponent
   ],
   exports: [
     ClosingTimeComponent,
@@ -41,8 +42,8 @@ import { ThumbsBarComponent } from './components/thumbs-bar/thumbs-bar.component
     VotesContainerComponent,
     VotesItemComponent,
     ComingSoonComponent,
-    ThumbsBarComponent
-
+    ThumbsBarComponent,
+    ThumbsActionComponent
   ]
 })
 export class SharedModule { }

@@ -60,7 +60,6 @@ $cl: 30%;
         display: flex;
         flex-direction: column;
         object-fit: contain;
-        overflow: auto;
         position: relative;
 
         small {
@@ -93,18 +92,24 @@ $cl: 30%;
           margin: 0;
         }
 
-        ::ng-deep app-thumbs-bar {
+        ::ng-deep app-thumbs-action {
           position: absolute;
           bottom: 0;
           left: 0;
           right: 0;
           height: 4.5rem;
 
-          .thumbs_bar {
+          .thumbs_action {
             height: 100%;
 
-            &__state .material-icons {
-              font-size: 3rem;
+            .app_thumb {
+              height: 100%;
+              width: 50%;
+              margin: 0;
+              font-size: 2.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
           }
         }

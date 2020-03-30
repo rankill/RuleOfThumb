@@ -67,3 +67,28 @@ h1.app_subtitle {
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
+
+.app_thumb {
+  padding: 0.1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+
+  &.selected {
+    border: 2px solid white;
+  }
+
+  &--readyonly {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &--up {
+    background-color: $vote-up;
+  }
+
+  &--down {
+    background-color: $vote-down;
+  }
+}
+
