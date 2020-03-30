@@ -1,0 +1,13 @@
+<div class="thumbs_bar" [class.thumbs_bar--no-read-only]="!readyOnly">
+  <div class="thumbs_bar__state thumbs_bar__state--up"
+       [ngStyle]="{'width': readyOnly ? percentageObj.up + '%' : '50%'}"
+       [style.width]="percentageObj+'%'">
+    <span class="material-icons"> thumb_up_alt </span>
+    <span *ngIf="readyOnly">{{percentageObj.up}}%</span>
+  </div>
+  <div class="thumbs_bar__state thumbs_bar__state--down"
+       [ngStyle]="{'width': percentageObj.down + '%'}">
+    <span *ngIf="readyOnly">{{percentageObj.down}}%</span>
+    <span class="material-icons"> thumb_down_alt </span>
+  </div>
+</div>

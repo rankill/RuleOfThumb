@@ -1,0 +1,28 @@
+%blur_content {
+  background: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(0.6rem) brightness(50%);
+  z-index: -1;
+}
+
+@mixin createBlur($width, $height, $top, $left) {
+  $blurH: 100vh;
+
+  $blurW: 100 / ($width / ($width * 0 + 1));
+  $blurTx: ($left - ($width / 2)) * -1;
+  $blurTy: ($top - ($height / 2)) * -1;
+
+  width: $width;
+  height: $height;
+  top: $top;
+  left: $left;
+
+  .blur {
+    height: $blurH;
+    width: calc(#{$blurW} * 100%);
+    transform: translate($blurTx, $blurTy);
+    @extend %blur_content;
+  }
+}

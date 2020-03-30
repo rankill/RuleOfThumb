@@ -1,0 +1,11 @@
+@import "src/theme/theme-variables";
+
+.shell_content {
+  min-height: calc(100vh - #{$footer-height});
+  padding-bottom: calc(#{$footer-height} + #{$footer-margin-top});
+
+  &--navbar_solid {
+    margin-top: $header-solid;
+    padding-bottom: unset;
+  }
+}

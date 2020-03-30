@@ -1,0 +1,138 @@
+@import "src/theme/theme-variables";
+@import 'src/theme/theme-breakpoints';
+
+
+.header {
+  display: flex;
+  position: fixed;
+  /* width: 100%; */
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-fixed;
+  background-color: transparent;
+  color: white;
+  z-index: 1;
+
+  transition: all 300ms ease;
+  white-space: nowrap;
+
+  &--is_solid {
+    background-color: white;
+    margin: 0;
+    height: 5rem;
+    color: black;
+    padding: 0 1.5rem;
+    z-index: 10;
+    box-shadow: 0 3px 15px 1px rgba(0, 0, 0, 0.59);
+    max-width: unset;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__navbar {
+    font-weight: lighter;
+
+    &__menu {
+      display: flex;
+      cursor: pointer;
+      transition: opacity 300ms ease, scale 300ms ease;
+      position: relative;
+      z-index: 10;
+      user-select: none;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      &:active {
+        transform: scale(.95);
+      }
+
+      &--is_open {
+        color: black;
+      }
+
+      @include for-size($tablet-landscape-up) {
+        display: none;
+      }
+    }
+
+    &__items {
+      list-style: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 3rem 1rem;
+      background: white;
+      min-height: 100%;
+      max-height: 100%;
+      color: black;
+      overflow: auto;
+      box-sizing: border-box;
+
+      transform-origin: 0 0;
+      transform: translate(100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+      &--is_open {
+        transform: none;
+      }
+
+      @include for-size($tablet-landscape-up) {
+        display: flex;
+        position: static;
+        background: unset;
+        padding: unset;
+        margin: unset;
+        transform: unset;
+        overflow: unset;
+        min-height: unset;
+        max-height: unset;
+        color: unset;
+      }
+
+      &__item {
+        margin-bottom: 2.778rem;
+        margin-top: 2.778rem;
+        cursor: pointer;
+        transition: opacity 300ms ease, scale 300ms ease;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        user-select: none;
+
+        @include for-size($tablet-landscape-up) {
+          margin-left: 2.778rem;
+          margin-bottom: 0;
+          margin-top: 0;
+          align-items: center;
+        }
+
+        .material-icons {
+          font-size: 1.667rem;
+        }
+
+        &:hover, &:active {
+          opacity: .7;
+
+          @include for-size($tablet-landscape-up) {
+            transform: scale(.95);
+          }
+        }
+      }
+    }
+  }
+}

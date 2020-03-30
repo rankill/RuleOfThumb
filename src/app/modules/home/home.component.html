@@ -1,0 +1,42 @@
+<section class="home" >
+  <div class="home__main" [ngStyle]="{ 'background-image': latestPost ? 'url(' + latestPost?.media + ')': ''}">
+    <div *ngIf="latestPost" class="home__main__content_blur">
+      <div class="home__main__content_blur__vote">
+        <small>What's your opinion on</small>
+        <h1 class="home__main__content_blur__vote__name">{{latestPost.name}}?</h1>
+
+        <p class="home__main__content_blur__vote__desc">{{latestPost.voteDescription}}</p>
+
+        <a class="home__main__content_blur__vote__path"
+           target="_blank"
+           [href]="latestPost.wikiPath">
+          <fa-icon [icon]="faWikipedia" ></fa-icon>
+          More Information
+        </a>
+
+        <h3 class="home__main__content_blur__vote__veredict_label">What's your Veredict?</h3>
+
+        <app-thumbs-action (selected)="thumbSelected($event)"></app-thumbs-action>
+      </div>
+
+      <div class="blur"></div>
+    </div>
+
+    <app-closing-time *ngIf="latestPost" [expireDate]="latestPost?.expireDate"></app-closing-time>
+  </div>
+
+  <div class="home__votes app_container">
+    <app-banner [title]="banner.title" [message]="banner.msg"></app-banner>
+
+    <div class="home__votes__wrapper">
+      <h1 class="app_subtitle">Votes</h1>
+
+      <app-votes-container [postList]="postList"></app-votes-container>
+
+      <div class="home__votes__wrapper__add_banner">
+        <p>Is there anyone else you would want us to add?</p>
+        <button class="app_btn">Submit a Name</button>
+      </div>
+    </div>
+  </div>
+</section>

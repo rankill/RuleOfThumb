@@ -1,0 +1,51 @@
+@import "../../../../../theme/theme-variables";
+
+.thumbs_bar {
+  height: 2.5rem;
+  transition: all 300ms ease;
+  display: flex;
+  font-size: 1.5rem;
+  position: relative;
+
+  &--no-read-only {
+    .thumbs_bar__state {
+      justify-content: center;
+      cursor: pointer;
+
+      &:active {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__state {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    user-select: none;
+    transition: width 300ms ease;
+    white-space: nowrap;
+
+    .material-icons {
+      margin: 0 10px;
+      font-size: 2rem;
+    }
+
+    &--up {
+      background-color: $vote-up-alpha;
+      left: 0;
+    }
+
+    &--down {
+      background-color: $vote-down-alpha;
+      justify-content: flex-end;
+      right: 0;
+    }
+
+    span {
+      z-index: 2;
+    }
+  }
+}
