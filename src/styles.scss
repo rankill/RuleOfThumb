@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
+// Normalize
+@import '~normalize.css';
+
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import "theme/theme-variables";
+
+// Theme customization
+@import "theme/theme";

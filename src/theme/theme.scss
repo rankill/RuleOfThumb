@@ -1,0 +1,19 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+html {
+  font-family: $font-lato;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  padding: 0 100px;
+}
