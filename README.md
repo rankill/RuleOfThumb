@@ -37,7 +37,7 @@ The architecture, in general, allows to maintain and scale the project in a simp
 
 - **Shell**: Main component where the header and footer are rendered and any component that you want to keep throughout the navigation
 
-- **Shared**: It will contain all the elements shared by the different modules of the platform, such as components, services, policies, etc.
+- **Shared**: It will contain all the elements shared by the different modules of the platform, such as components, services, directives, etc.
 
 - **Modules**: They are the main modules (Pages) of the platform
 
