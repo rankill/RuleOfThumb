@@ -25,7 +25,7 @@ export class InMemoryApiService implements InMemoryDbService {
         voteDescription: 'Is he the best rapper in the world?',
         isMain: false,
         expireDate: null,
-        createdDate: '2020-02-28T01:30',
+        createdDate: '2020-01-28T01:30',
         media: '/assets/people/kanye_west.png',
         wikiPath: 'https://es.wikipedia.org/wiki/Kanye_West',
         categoryName: 'Entertainment'
