@@ -1,0 +1,23 @@
+<header class="header app_container" [class.header--is_solid]="solidNavbar" (scroll)="onWindowScroll();">
+  <h1 class="header__title">
+    <a routerLink="/home">Rule of Thumb</a>
+  </h1>
+  <nav class="header__navbar">
+    <span class="material-icons header__navbar__menu just_mobile"
+          [class.header__navbar__menu--is_open]="isNavbarOpen"
+          (click)="toggleNavbar()">
+      {{isNavbarOpen ? 'close' : 'menu'}}
+    </span>
+    <ul class="header__navbar__items"
+        [class.header__navbar__items--is_open]="isNavbarOpen">
+      <li class="header__navbar__items__item"><a routerLink="/past-trials" routerLinkActive="active">Past Trials</a></li>
+      <li class="header__navbar__items__item"><a routerLink="/how-it-works" routerLinkActive="active">How It Works</a></li>
+      <li class="header__navbar__items__item"><a routerLink="/sign-in" routerLinkActive="active">Log in / Sign Up</a></li>
+      <li class="header__navbar__items__item">
+        <span class="material-icons">
+          search
+        </span>
+      </li>
+    </ul>
+  </nav>
+</header>

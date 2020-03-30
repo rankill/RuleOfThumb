@@ -1,0 +1,87 @@
+@import 'src/theme/theme-breakpoints';
+@import 'src/theme/theme-variables';
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+
+  background-color: transparent;
+  margin-top: $footer-margin-top;
+
+  // Dotted border top
+  background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+  background-position: top;
+  background-size: 0.5556rem 1px;
+  background-repeat: repeat-x;
+  height: $footer-height;
+
+  align-items: flex-start;
+
+  @include for-size($tablet-landscape-up) {
+    align-items: center;
+  }
+
+  &__links,
+  &__social {
+    display: flex;
+  }
+
+  &__social {
+    .footer__items {
+      align-items: flex-end;
+
+      @include for-size($tablet-landscape-up) {
+        align-items: center;
+      }
+    }
+  }
+
+  &__items {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    font-weight: 100;
+    flex-direction: column;
+
+    @include for-size($tablet-landscape-up) {
+      flex-direction: row;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      cursor: pointer;
+      transition: all 300ms ease;
+      position: relative;
+
+      margin-bottom: 1.667rem;
+
+      &:first-child {
+        margin-left: 0;
+        margin-bottom: 1.667rem;
+
+        @include for-size($tablet-landscape-up) {
+          margin: 0;
+        }
+      }
+
+      &:hover {
+        opacity: .7;
+        transform: scale(.95);
+      }
+
+      @include for-size($tablet-landscape-up) {
+        margin-left: 1.667rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

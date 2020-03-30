@@ -1,0 +1,58 @@
+@import "src/theme/theme-variables";
+@import 'src/theme/theme-breakpoints';
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(235, 235, 235);
+  justify-content: center;
+  align-items: center;
+  padding: 1.278rem;
+
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+
+  @include for-size($tablet-landscape-up) {
+    flex-direction: row;
+  }
+
+  &__title {
+    margin-bottom: 0.8333rem;
+    display: flex;
+    flex-direction: column;
+
+    @include for-size($tablet-landscape-up) {
+      margin-right: 0.8333rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__message {
+    flex: 2;
+
+    @include for-size($tablet-landscape-up) {
+      padding-right: 1.944rem;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    transition: all 300ms ease;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    @include for-size($tablet-landscape-up) {
+      top: unset;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
