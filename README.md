@@ -11,6 +11,8 @@
   </a>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9d33674d-b233-4a13-9457-716133cd1575/deploy-status)](https://app.netlify.com/sites/ruleofthumb/deploys)
+
 [![Angular](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/002/square_256/angularjs.png "Angular" )](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/002/square_256/angularjs.png "Angular" ) [![Rxjs](https://gblobscdn.gitbook.com/spaces%2F-LwY_OXUQHvmdEoy0xNa%2Favatar.png?generation=1579380746835203&alt=media "Rxjs" )](https://gblobscdn.gitbook.com/spaces%2F-LwY_OXUQHvmdEoy0xNa%2Favatar.png?generation=1579380746835203&alt=media "Rxjs" ) [![Sass](https://cdn.iconscout.com/icon/free/png-256/sass-226054.png "Sass" )](https://cdn.iconscout.com/icon/free/png-256/sass-226054.png "Sass" )[![KarmaJasmine](https://bitrise-steplib-collection.s3.amazonaws.com/steps/karma-jasmine-runner/assets/icon.svg "KarmaJasmine" )](https://bitrise-steplib-collection.s3.amazonaws.com/steps/karma-jasmine-runner/assets/icon.svg "KarmaJasmine" ) 
 
 
