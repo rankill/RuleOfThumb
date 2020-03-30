@@ -1,18 +1,19 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
+import {Post} from '@shared/models/post.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryApiService implements InMemoryDbService {
   createDb() {
-    const posts = [
+    const posts: Post[] = [
       {
         id: 1,
         name: 'Pope Francis',
         voteDescription: 'He\'s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up)',
         isMain: true,
-        expireDate: '2020-06-20',
+        expireDate: '2020-04-20',
         createdDate: '2020-03-28T01:30',
         media: '/assets/people/papa_francisco.jpg',
         wikiPath: 'https://es.wikipedia.org/wiki/Francisco_(papa)',

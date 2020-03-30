@@ -18,6 +18,6 @@ export class ClosingTimeComponent implements OnInit {
     const today = moment();
     const expireDate = moment(this.expireDate);
 
-    this.daysAmount = expireDate.diff(today, 'days');
+    this.daysAmount = expireDate.diff(today, 'days') || 0;
   }
 }

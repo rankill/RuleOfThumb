@@ -1,0 +1,11 @@
+<div class="thumbs_action">
+  <span class="material-icons app_thumb app_thumb--up"
+        [class.selected]="thumbSelected === ThumbType.Up"
+        (click)="activeVote(ThumbType.Up)"> thumb_up_alt
+  </span>
+
+  <span class="material-icons app_thumb app_thumb--down"
+        [class.selected]="thumbSelected === ThumbType.Down"
+        (click)="activeVote(ThumbType.Down)"> thumb_down_alt
+  </span>
+</div>

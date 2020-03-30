@@ -16,7 +16,7 @@
 
         <h3 class="home__main__content_blur__vote__veredict_label">What's your Veredict?</h3>
 
-        <app-thumbs-bar [readyOnly]="false"></app-thumbs-bar>
+        <app-thumbs-action (selected)="thumbSelected($event)"></app-thumbs-action>
       </div>
 
       <div class="blur"></div>

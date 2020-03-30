@@ -3,21 +3,30 @@
      [ngStyle]="{ 'background-image':'url(' + post.media + ')'}">
   <div class="vote_item__info">
     <div>
-      <span class="material-icons vote_thumb vote_thumb--up vote_thumb--readyonly"> thumb_up_alt </span>
+      <span class="material-icons app_thumb app_thumb--up app_thumb--readyonly"> thumb_up_alt </span>
     </div>
     <div class="vote_item__info__data">
       <h1 class="vote_item__info__data__name">{{post.name}}</h1>
       <p class="vote_item__info__data__time"><strong>{{postTimeAgo}}</strong> in {{post.categoryName}}</p>
-      <p>{{!postVoted ? post.voteDescription : 'Thank you for voting!'}}</p>
+
+      <p  *ngIf="!postVoted; else thanksLabel">
+        {{post.voteDescription}}
+      </p>
+
+      <ng-template #thanksLabel>
+        <p>Thank you for voting!</p>
+      </ng-template>
 
       <div class="vote_item__info__action">
-        <span class="material-icons vote_thumb vote_thumb--up" [class.selected]="currentVote === VOTE_UP" (click)="setVote(VOTE_UP)"> thumb_up_alt </span>
-        <span class="material-icons vote_thumb vote_thumb--down" [class.selected]="currentVote === VOTE_DOWN" (click)="setVote(VOTE_DOWN)"> thumb_down_alt </span>
-        <button class="app_btn app_btn--white">Vote {{postVoted ? 'again' : 'now'}}</button>
+        <app-thumbs-action *ngIf="!postVoted" [@inOutAnimation]
+                           (selected)="activeVote($event)"
+                           [thumbSelected]="thumbSelected">
+        </app-thumbs-action>
+        <button class="app_btn app_btn--white" (click)="setVote()">Vote {{postVoted ? 'again' : 'now'}}</button>
       </div>
     </div>
     <div class="vote_item__info__overlay"></div>
   </div>
 
-  <app-thumbs-bar></app-thumbs-bar>
+  <app-thumbs-bar *ngIf="post" [thumbs]="post.thumbs"></app-thumbs-bar>
 </div>
