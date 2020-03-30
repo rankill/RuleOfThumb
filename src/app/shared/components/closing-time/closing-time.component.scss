@@ -2,7 +2,7 @@
 @import "src/theme/theme-breakpoints";
 
 :host {
-  height: 2.778rem;
+  height: $closing-banner-height;
   width: 100%;
   position: absolute;
   display: flex;
