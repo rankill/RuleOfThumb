@@ -28,7 +28,8 @@ For the development of the prototype the following tech stack was selected:
 
 ### Layout - Responsive
 
-Mobile-first strategy was used for responsive implementation to generate a scalable architecture at the design level
+- Mobile-first strategy was used for responsive implementation to generate a scalable architecture at the design level
+- Implementation of Flexbox in general and use of CSS Grids technique for the post list box
 
 ### Architecture
 
