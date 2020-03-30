@@ -1,0 +1,10 @@
+<div class="thumbs_bar" [class.thumbs_bar--no-read-only]="!readyOnly">
+  <div class="thumbs_bar__state thumbs_bar__state--up" [style.width]="'50%'">
+    <span class="material-icons"> thumb_up_alt </span>
+    <span *ngIf="readyOnly">50%</span>
+  </div>
+  <div class="thumbs_bar__state thumbs_bar__state--down" [style.width]="'50%'">
+    <span *ngIf="readyOnly">50%</span>
+    <span class="material-icons"> thumb_down_alt </span>
+  </div>
+</div>

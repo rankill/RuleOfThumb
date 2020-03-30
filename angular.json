@@ -121,8 +121,20 @@
               "devServerTarget": "RuleOfThumb:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/RuleOfThumb",
+            "netlifyToken": "0b7fcb69a1b3b6987a7756467d197190f9f4b04a4c14929d1c472e3086388deb",
+            "siteId": "9d33674d-b233-4a13-9457-716133cd1575"
+          }
         }
       }
-    }},
-  "defaultProject": "RuleOfThumb"
+    }
+  },
+  "defaultProject": "RuleOfThumb",
+  "cli": {
+    "analytics": "c0e5ec19-ed65-4cef-8b01-8badbe6ade22"
+  }
 }
