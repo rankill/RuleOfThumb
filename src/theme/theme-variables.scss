@@ -5,11 +5,36 @@
 // Font
 $font-lato: 'Lato', sans-serif;
 
+// spacing container
+$margin-container-phone: 1.1rem;
+$margin-container-tablet-up: 5rem;
+$margin-container-big-desktop-up: auto;
+
 // Header
-$header-fixed: 150px;
+$header-fixed: 7rem;
+$header-solid: 5rem;
+
+// Footer
+$footer-height: 5.556rem;
+$footer-margin-top: 2.778rem;
 
 // Colors
 $home-banner-transparent: rgba(0, 0, 0, 0.19);
+$body-color: rgb(51, 51, 51);
 
 // General
-$triangle-width: 6.5px;
+$triangle-width: 0.4rem;
+
+// Votes
+$vote-up: rgb(28, 187, 180);
+$vote-up-alpha: rgba(28, 187, 180, 0.75);
+
+$vote-down: rgb(255, 173, 29);
+$vote-down-alpha: rgba(255, 173, 29, 0.75);
+
+// Breakpoints ids
+$phone-only: 'phone-only';
+$tablet-portrait-up: 'tablet-portrait-up';
+$tablet-landscape-up: 'tablet-landscape-up';
+$desktop-up: 'desktop-up';
+$big-desktop-up: 'big-desktop-up';
