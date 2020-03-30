@@ -1,0 +1,178 @@
+@import "src/theme/theme-variables";
+@import "src/theme/theme-breakpoints";
+@import "src/theme/theme-mixins";
+
+
+// Blur home element
+
+// Mobile
+$cwm: 90%;
+$chm: 55%;
+$ctm: 50%;
+$clm: 50%;
+
+// Desktop
+$cw: 45%;
+$ch: 55%;
+$ct: 50%;
+$cl: 30%;
+
+.home {
+  &__main {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    transition: background-position 300ms ease;
+
+    @include for-size($tablet-landscape-up) {
+      background-position: unset;
+    }
+
+
+    &__content_blur {
+      background: inherit;
+
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+      position: absolute;
+
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+
+      display: flex;
+
+      @include createBlur($cwm, $chm, $ctm, $clm);
+
+      @include for-size($tablet-landscape-up) {
+        @include createBlur($cw, $ch, $ct, $cl);
+      }
+
+      &__vote {
+        height: 100%;
+        width: 100%;
+        color: white;
+        font-weight: 100;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        object-fit: contain;
+        overflow: auto;
+        position: relative;
+
+        small {
+          margin-bottom: 0;
+          margin-top: 2rem;
+        }
+
+        &__name {
+          margin-top: 0;
+          font-size: 3rem;
+          margin-bottom: 1.3rem;
+        }
+
+        &__desc {
+          margin: 0;
+        }
+
+        &__path {
+          color: white;
+          display: inline-flex;
+          width: fit-content;
+          margin: 1.5rem 0 2rem;
+
+          fa-icon {
+            margin-right: 6px;
+          }
+        }
+
+        &__veredict_label {
+          margin: 0;
+        }
+
+        ::ng-deep app-thumbs-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 20%;
+
+          .thumbs_bar {
+            height: 100%;
+
+            &__state .material-icons {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__votes {
+    padding-top: 1.667rem;
+
+    ::ng-deep .banner {
+      h3 {
+        font-weight: 100;
+      }
+
+      h1, h3 {
+        margin: 0;
+      }
+    }
+
+    &__wrapper {
+      &__add_banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url("/assets/people/people.png");
+        margin-top: 1.5rem;
+        position: relative;
+        padding: 1rem;
+
+        @include for-size($tablet-landscape-up) {
+          flex-direction: row;
+          padding: 0 1rem;
+        }
+
+        p, .app_btn { z-index: 1 }
+
+        p {
+          margin-bottom: 1.2rem;
+          margin-top: 0;
+          padding: 0;
+          font-size: 1.6rem;
+          font-weight: 100;
+          text-align: center;
+
+          @include for-size($tablet-landscape-up) {
+            text-align: left;
+            margin: 1.2rem 0;
+          }
+        }
+
+        .app_btn {
+          z-index: 1;
+          padding: 0.7rem 2rem;
+          border-width: medium;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: rgba(255, 255, 255, 0.82);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<div *ngIf="showBanner" [@leaveAnimation] class="banner">
+  <div class="banner__title" [innerHTML]="title"></div>
+  <div class="banner__message" [innerHTML]="message"></div>
+  <span class="banner__close material-icons" (click)="closeBanner()">close</span>
+</div>

@@ -1,3 +1,5 @@
+@import 'theme-breakpoints';
+@import 'theme-variables';
 /*
  * Global application theme.
  * Framework overrides and customization goes here.
@@ -6,14 +8,62 @@
 html {
   font-family: $font-lato;
   font-weight: normal;
+  font-size: 18px;
+
 }
 
 body {
   margin: 0;
   padding: 0;
+  color: $body-color;
+
+  /* to stop flickering of text in safari */
+  -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
+.app_container {
+  margin-left: $margin-container-phone;
+  margin-right: $margin-container-phone;
+  position: relative;
+  max-width: 90rem;
 
-.container {
-  padding: 0 100px;
+  @include for-size($tablet-landscape-up) {
+    margin-left: $margin-container-tablet-up;
+    margin-right: $margin-container-tablet-up;
+  }
+
+  @include for-size($big-desktop-up) {
+    margin-left: $margin-container-big-desktop-up;
+    margin-right: $margin-container-big-desktop-up;
+  }
+}
+
+h1.app_subtitle {
+  font-weight: 100;
+}
+
+.app_btn {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  outline: none;
+  transition: all 300ms ease;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+
+
+  &--white {
+    color: white;
+    border: 1px solid white;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
