@@ -19,9 +19,8 @@
 For the development of the prototype the following tech stack was selected:
 
 - **Angular 8**
-   - **[In Memory Web Api](https://github.com/angular/in-memory-web-api "In Memory Web Api")**, An in-memory web api for Angular demos and tests that emulates CRUD operations over a RESTy API.
-
-  - IndexedDB to persist the votes made and obtain them after reloading the page
+   - **[In Memory Web Api](https://github.com/angular/in-memory-web-api "In Memory Web Api")**: An in-memory web api for Angular demos and tests that emulates CRUD operations over a RESTy API.
+- **IndexedDB** to persist the votes made and obtain them after reloading the page
 
 - **Sass**, Preprocessor to implement CSS in a structural and optimal way, for future growth the 7-1 pattern of Sass is proposed
 
