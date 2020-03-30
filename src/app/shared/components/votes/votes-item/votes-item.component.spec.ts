@@ -101,6 +101,9 @@ describe('VotesItemComponent', () => {
 
     const dbService = TestBed.inject(NgxIndexedDBService);
     const dbPost = await dbService.getByKey('posts_voted', component.post.id);
-    expect(dbPost.id).toEqual(component.post.id);
+
+    if (dbPost) {
+      expect(dbPost.id).toEqual(component.post.id);
+    }
   });
 });
