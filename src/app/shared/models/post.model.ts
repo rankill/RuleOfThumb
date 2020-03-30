@@ -8,6 +8,11 @@ export interface Post {
   media: string;
   wikiPath: string;
   categoryName: string;
-  thumbsUp: number;
-  thumbsDown: number;
+  thumbs?: Thumbs;
+}
+
+export interface Thumbs {
+  up: number;
+  down: number;
+  total: number;
 }

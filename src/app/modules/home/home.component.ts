@@ -23,10 +23,17 @@ export class HomeComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    /**
+     * Get the posts list from the Mock API and extract the latest one
+     */
     this.postService.getPosts().subscribe(posts => {
-      this.postList = posts.sort((left, right) => moment.utc(right.createdDate).diff(moment.utc(left.createdDate)));
+      this.postList = posts.sort((left, right) => (moment.utc(right.createdDate).diff(moment.utc(left.createdDate)) > 0 ? 1 : - 1));
+      // Extract latest post to add to the main banner
       this.latestPost = this.postList.shift();
-
     });
+  }
+
+  thumbSelected(thumbType) {
+    console.log('Thumb type', thumbType);
   }
 }
