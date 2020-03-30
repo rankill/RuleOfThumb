@@ -19,22 +19,23 @@
 For the development of the prototype the following tech stack was selected:
 
 - **Angular 8**
-   - **[In Memory Web Api](https://github.com/angular/in-memory-web-api "In Memory Web Api")**: An in-memory web api for Angular demos and tests that emulates CRUD operations over a RESTy API.
+   - **[In Memory Web Api](https://github.com/angular/in-memory-web-api "In Memory Web Api")**: An in-memory web API for Angular demos and tests that emulates CRUD operations over a RESTy API.
 - **IndexedDB** to persist the votes made and obtain them after reloading the page
 
-- **Sass**, Preprocessor to implement CSS in a structural and optimal way, for future growth the 7-1 pattern of Sass is proposed
+- **Sass**, Preprocessor to implement CSS structurally and optimally, for future growth the 7-1 pattern of Sass is proposed
 
 - **Karma / Jasmine**
 
 ### Layout - Responsive
 
-- Mobile-first strategy was used for responsive implementation to generate a scalable architecture at the design level
-- Implementation of Flexbox in general and use of CSS Grids technique for the post list box
+- The Mobile-first strategy was used for responsive implementation to generate a scalable architecture at the design level
+- Implementation of Flexbox in general and use of CSS Grid technique for the post list box
 
 ### Architecture
 
-The architecture in general allows to maintain and scale the project in a simple way, dividing this into three main folders:
- - **Shell**: Main component where the header and footer are rendered and any component that you want to keep throughout the navigation
+The architecture, in general, allows to maintain and scale the project in a simple way, dividing this into three main folders:
+
+- **Shell**: Main component where the header and footer are rendered and any component that you want to keep throughout the navigation
 
 - **Shared**: It will contain all the elements shared by the different modules of the platform, such as components, services, policies, etc.
 
