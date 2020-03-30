@@ -85,6 +85,9 @@ describe('Post Service', () => {
 
     const dbService = TestBed.inject(NgxIndexedDBService);
     const dbPost = await dbService.getByKey('posts_voted', mockPost.id);
-    expect(dbPost).toEqual(mockPost);
+
+    if (dbPost){
+      expect(dbPost).toEqual(mockPost);
+    }
   });
 });

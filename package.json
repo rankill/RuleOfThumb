@@ -1,6 +1,6 @@
 {
   "name": "rule-of-thumb",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy:netifly": "ng deploy"
+  },
+  "homepage": "https://github.com/rankill/RuleOfThumb#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rankill/RuleOfThumb.git"
   },
   "private": true,
   "dependencies": {
@@ -26,8 +31,6 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "angular-in-memory-web-api": "^0.10.0",
-    "concurrently": "^5.1.0",
-    "json-server": "^0.16.1",
     "material-design-icons": "^3.0.1",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
