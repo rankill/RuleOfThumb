@@ -27,7 +27,7 @@ For the development of the prototype the following tech stack was selected:
 
 - **Karma / Jasmine**
 
-###Layout - Responsive
+### Layout - Responsive
 
 Mobile-first strategy was used for responsive implementation to generate a scalable architecture at the design level
 
