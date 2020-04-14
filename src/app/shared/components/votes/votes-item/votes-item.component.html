@@ -2,8 +2,12 @@
      *ngIf="post"
      [ngStyle]="{ 'background-image':'url(' + post.media + ')'}">
   <div class="vote_item__info">
-    <div>
-      <span class="material-icons app_thumb app_thumb--up app_thumb--readyonly"> thumb_up_alt </span>
+    <div class="vote_item__info__thumb">
+      <span class="material-icons app_thumb app_thumb--readyonly"
+            [@showHide]="votePositive === null ? 'hide' : 'show'"
+            [ngClass]="{'app_thumb--up': votePositive, 'app_thumb--down': !votePositive}">
+        {{votePositive ? 'thumb_up_alt' : 'thumb_down_alt'}}
+      </span>
     </div>
     <div class="vote_item__info__data">
       <h1 class="vote_item__info__data__name">{{post.name}}</h1>
@@ -28,5 +32,5 @@
     <div class="vote_item__info__overlay"></div>
   </div>
 
-  <app-thumbs-bar *ngIf="post" [thumbs]="post.thumbs"></app-thumbs-bar>
+  <app-thumbs-bar #thumbsBar *ngIf="post" [thumbs]="post.thumbs"></app-thumbs-bar>
 </div>

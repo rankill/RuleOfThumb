@@ -12,7 +12,7 @@ export class ThumbsBarComponent implements OnInit, OnChanges {
 
   percentageObj = {
     up: 0,
-    down: 0,
+    down: 0
   };
 
   constructor() { }

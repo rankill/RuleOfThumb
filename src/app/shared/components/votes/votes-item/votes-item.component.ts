@@ -2,9 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import * as moment from 'moment';
 
 import {Post} from '@shared/models/post.model';
-import {animate, style, transition, trigger} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ThumbType} from '@shared/enums/common.enum';
 import {PostService} from '@shared/services/post/post.service';
+
+const ANIMATION_TIME = 300;
 
 @Component({
   selector: 'app-votes-item',
@@ -18,7 +20,7 @@ import {PostService} from '@shared/services/post/post.service';
           ':enter',
           [
             style({ width: 0, opacity: 0 }),
-            animate('300ms ease',
+            animate(`${ANIMATION_TIME}ms ease`,
               style({ width: '*', opacity: 1 }))
           ]
         ),
@@ -26,25 +28,39 @@ import {PostService} from '@shared/services/post/post.service';
           ':leave',
           [
             style({ width: '*', opacity: 1 }),
-            animate('300ms ease',
+            animate(`${ANIMATION_TIME}ms ease`,
               style({ width: 0, opacity: 0 }))
           ]
         )
       ]
-    )
+    ),
+    trigger('showHide', [
+      state('show', style({
+        opacity: 1,
+      })),
+      state('hide', style({
+        opacity: 0,
+      })),
+      transition('hide => show', [
+        animate(`${ANIMATION_TIME}ms ease`)
+      ]),
+    ]),
   ]
 })
 export class VotesItemComponent implements OnInit {
+
   @Input() post: Post;
 
   public postTimeAgo: string;
   public postVoted = false;
   public thumbSelected: ThumbType;
+  public votePositive = false;
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.postTimeAgo = moment(this.post.createdDate).fromNow();
+    this.checkVotePositive();
   }
 
   /**
@@ -85,6 +101,16 @@ export class VotesItemComponent implements OnInit {
       this.postService.updatePost(this.post);
 
       this.postVoted = true;
+
+      this.checkVotePositive();
+    }
+  }
+
+  checkVotePositive() {
+    if (!this.post.thumbs || this.post.thumbs?.up === this.post.thumbs?.down) {
+      this.votePositive = null;
+    } else {
+      this.votePositive = this.post.thumbs.up > this.post.thumbs.down;
     }
   }
 }
