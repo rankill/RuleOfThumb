@@ -1,4 +1,4 @@
-<h1 align="center"> 👍 Welcome to rule-of-thumb 👎</h1>
+<h1 align="center"> 👍 Welcome to rule-of-thumb test 👎</h1>
 <h2 align="center"><a  href="https://ruleofthumb.netlify.com"> ✨ Live Demo</a></h2>
 
 <p>
